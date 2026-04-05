@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Hamid Jaouhar - Réservez votre consultation gratuite de 15 minutes. Thérapie virtuelle à Casablanca, Maroc.">
+    <title>Contact | Hamid Jaouhar - Thérapeute à Casablanca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #5B7B7A; --primary-light: #7A9E9D; --primary-dark: #3D5655;
+            --accent: #C9A87C; --accent-light: #E0CBA8;
+            --text-dark: #2C3E50; --text-medium: #5A6B7A; --text-light: #8A9BA8;
+            --bg-cream: #FAF8F5; --bg-light: #F5F2ED; --bg-white: #FFFFFF; --border-light: #E8E4DF;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        a { text-decoration: none; }
+        input, textarea, select, button { font-family: 'Inter', sans-serif; }
+        .top-bar { background: var(--primary-dark); color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .top-bar-buttons { display: flex; gap: 10px; }
+        .btn-small { background: transparent; border: 1px solid white; color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all 0.3s; }
+        .btn-small:hover { background: white; color: var(--primary-dark); }
+        header { background: var(--bg-white); padding: 20px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--primary); }
+        .btn-primary { background: var(--primary); color: white; padding: 14px 32px; border: none; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(91,123,122,0.3); }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 80px 40px; text-align: center; }
+        .page-header h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-header p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        /* Contact Section */
+        .contact-section { padding: 80px 40px; }
+        .contact-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h2 { font-size: 32px; color: var(--primary-dark); margin-bottom: 20px; }
+        .contact-info > p { color: var(--text-medium); margin-bottom: 40px; line-height: 1.8; }
+        .contact-detail { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+        .contact-detail-icon { width: 50px; height: 50px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+        .contact-detail h4 { font-size: 18px; color: var(--primary-dark); margin-bottom: 5px; }
+        .contact-detail p { color: var(--text-medium); }
+
+        /* Form */
+        .contact-form { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .contact-form h3 { font-size: 24px; color: var(--primary-dark); margin-bottom: 25px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark); }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 14px 18px; border: 1px solid var(--border-light); border-radius: 8px;
+            font-size: 15px; transition: border-color 0.3s; background: var(--bg-cream);
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: var(--primary); background: white;
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        /* Success Message */
+        .success-message { display: none; background: #E8F5E9; border: 1px solid #4CAF50; color: #2E7D32; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
+
+        /* FAQ */
+        .faq-section { padding: 80px 40px; background: var(--bg-light); }
+        .faq-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .faq-content h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 50px; }
+        .faq-item { background: white; padding: 25px 30px; border-radius: 10px; margin-bottom: 15px; text-align: left; cursor: pointer; transition: box-shadow 0.3s; }
+        .faq-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .faq-question { font-size: 18px; font-weight: 600; color: var(--primary-dark); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 24px; color: var(--accent); transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { color: var(--text-medium); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 80px 40px; text-align: center; }
+        .cta-section h2 { font-size: 36px; margin-bottom: 20px; }
+        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-white { background: white; color: var(--primary-dark); padding: 16px 40px; border: none; border-radius: 30px; font-size: 17px; font-weight: 700; cursor: pointer; transition: all 0.3s; display: inline-block; }
+        .btn-white:hover { background: var(--bg-cream); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+        /* Footer */
+        footer { background: var(--text-dark); color: white; padding: 60px 40px 30px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+        .footer-column h4 { font-size: 18px; margin-bottom: 20px; color: var(--accent-light); font-family: 'Playfair Display', serif; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 15px; transition: color 0.3s; }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6); }
+        .footer-locations { max-width: 1200px; margin: 0 auto 30px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); }
+        @media (max-width: 968px) {
+            .contact-content { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+            nav { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+            header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <span>Thérapie Virtuelle à Casablanca et Partout au Maroc</span>
+        <div class="top-bar-buttons">
+            <a href="contact.html" class="btn-small">Commencer</a>
+            <a href="#" class="btn-small">Espace Client</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Hamid Jaouhar</a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">À Propos</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="contact.html" class="btn-primary">COMMENCER</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Contactez-Moi</h1>
+        <p>Prenez le premier pas vers votre bien-être. Réservez votre consultation gratuite dès maintenant.</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Parlons Ensemble</h2>
+                <p>Je suis là pour vous accompagner. N'hésitez pas à me contacter pour toute question ou pour réserver votre consultation initiale gratuite de 15 minutes.</p>
+                
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📍</div>
+                    <div>
+                        <h4>Localisation</h4>
+                        <p>Casablanca, Maroc<br>Thérapie virtuelle partout au Maroc</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📧</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@hamidjaouhar.ma</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📱</div>
+                    <div>
+                        <h4>Téléphone / WhatsApp</h4>
+                        <p>+212 600 601 878</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">🕐</div>
+                    <div>
+                        <h4>Horaires</h4>
+                        <p>Lundi - Vendredi : 9h00 - 19h00<br>Samedi : 9h00 - 14h00<br>Dimanche : Fermé</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Réserver une Consultation Gratuite</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+212 600 601 878">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Souhaité</label>
+                        <select id="service" name="service">
+                            <option value="">-- Choisissez un service --</option>
+                            <option value="anxiete">Thérapie de l'Anxiété</option>
+                            <option value="transitions">Transitions de Vie</option>
+                            <option value="perfectionnisme">Perfectionnisme et Confiance</option>
+                            <option value="relations">Relations et Limites Personnelles</option>
+                            <option value="enfant-interieur">Enfant Intérieur et Guérison</option>
+                            <option value="etudiant">Stress Universitaire</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Parlez-moi brièvement de ce qui vous amène..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Envoyer Ma Demande</button>
+                </form>
+                <div class="success-message" id="successMessage">
+                    ✅ Merci ! Votre demande a été envoyée avec succès. Je vous répondrai sous 24 heures.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-content">
+            <h2>Questions Fréquentes</h2>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Comment se déroule une séance virtuelle ?</div>
+                <div class="faq-answer">Les séances se font par vidéoconférence sécurisée. Vous recevez un lien avant chaque rendez-vous. C'est simple, confidentiel et aussi efficace qu'une séance en personne.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Combien de temps dure une séance ?</div>
+                <div class="faq-answer">Chaque séance individuelle dure environ 50 minutes. La consultation initiale gratuite dure 15 minutes.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Quels sont les tarifs ?</div>
+                <div class="faq-answer">Les tarifs sont adaptés à votre situation. Contactez-moi pour discuter des options disponibles. Des tarifs réduits peuvent être envisagés selon vos besoins.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Est-ce que la thérapie virtuelle est efficace ?</div>
+                <div class="faq-answer">Oui, de nombreuses études confirment que la thérapie en ligne est aussi efficace que la thérapie en personne pour la plupart des problématiques (anxiété, dépression, transitions de vie).</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Puis-je consulter depuis n'importe quelle ville du Maroc ?</div>
+                <div class="faq-answer">Absolument ! La thérapie virtuelle vous permet de consulter depuis Casablanca, Rabat, Marrakech, ou n'importe où au Maroc, tant que vous avez une connexion internet stable.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Prêt à Commencer Votre Parcours ?</h2>
+        <p>Vous n'avez pas à affronter cela seul. Faites le premier pas aujourd'hui.</p>
+        <a href="#contactForm" class="btn-white">Réserver Ma Consultation Gratuite</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Hamid Jaouhar</h4>
+                <a href="index.html">Site Principal</a>
+                <a href="about.html">À Propos d'Hamid</a>
+                <a href="contact.html">Réserver en Ligne</a>
+            </div>
+            <div class="footer-column">
+                <h4>Notre Équipe</h4>
+                <a href="about.html">Rencontrer Notre Équipe</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <a href="contact.html">Réserver en Ligne</a>
+                <a href="contact.html">Formulaire de Contact</a>
+                <a href="#">Espace Client</a>
+            </div>
+            <div class="footer-column">
+                <h4>Liens Rapides</h4>
+                <a href="services.html">Services de Thérapie</a>
+                <a href="about.html">À Propos</a>
+                <a href="about.html">Rencontrer Notre Équipe</a>
+            </div>
+        </div>
+        <div class="footer-locations">
+            Thérapie Virtuelle à Casablanca et Partout au Maroc | Services de thérapie en ligne pour Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Mohammedia, El Jadida, Nador, Béni Mellal, et toutes les villes du Maroc.
+        </div>
+        <div class="footer-bottom">
+            © 2026 Hamid Jaouhar. Tous Droits Réservés.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            if (nav.style.display === 'flex') {
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px'; nav.style.left = '0'; nav.style.right = '0';
+                nav.style.background = 'white'; nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            }
+        }
+        function toggleFaq(item) { item.classList.toggle('active'); }
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="À propos de Hamid Jaouhar - Thérapeute certifié à Casablanca. Découvrez mon parcours et mon approche thérapeutique.">
+    <title>À Propos | Hamid Jaouhar - Thérapeute à Casablanca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #5B7B7A; --primary-light: #7A9E9D; --primary-dark: #3D5655;
+            --accent: #C9A87C; --accent-light: #E0CBA8;
+            --text-dark: #2C3E50; --text-medium: #5A6B7A; --text-light: #8A9BA8;
+            --bg-cream: #FAF8F5; --bg-light: #F5F2ED; --bg-white: #FFFFFF; --border-light: #E8E4DF;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        a { text-decoration: none; }
+        .top-bar { background: var(--primary-dark); color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .top-bar-buttons { display: flex; gap: 10px; }
+        .btn-small { background: transparent; border: 1px solid white; color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all 0.3s; }
+        .btn-small:hover { background: white; color: var(--primary-dark); }
+        header { background: var(--bg-white); padding: 20px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--primary); }
+        .btn-primary { background: var(--primary); color: white; padding: 12px 28px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(91,123,122,0.3); }
+        .btn-secondary { background: transparent; color: var(--primary); padding: 12px 28px; border: 2px solid var(--primary); border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
+        .btn-secondary:hover { background: var(--primary); color: white; }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 80px 40px; text-align: center; }
+        .page-header h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-header p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        /* About Section */
+        .about-section { padding: 80px 40px; }
+        .about-content { max-width: 1000px; margin: 0 auto; }
+        .about-grid { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; margin-bottom: 80px; }
+        .about-image { background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius: 15px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-text h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 20px; }
+        .about-text p { font-size: 17px; color: var(--text-medium); margin-bottom: 20px; line-height: 1.8; }
+
+        /* Values */
+        .values-section { padding: 80px 40px; background: var(--bg-light); }
+        .values-content { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .values-content h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 50px; }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .value-card { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .value-icon { font-size: 48px; margin-bottom: 20px; }
+        .value-card h3 { font-size: 22px; color: var(--primary-dark); margin-bottom: 15px; }
+        .value-card p { color: var(--text-medium); line-height: 1.7; }
+
+        /* Approach */
+        .approach-section { padding: 80px 40px; background: white; }
+        .approach-content { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .approach-content h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 20px; }
+        .approach-content > p { font-size: 18px; color: var(--text-medium); margin-bottom: 50px; }
+        .approach-methods { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; text-align: left; }
+        .method-card { background: var(--bg-cream); padding: 30px; border-radius: 12px; border-left: 4px solid var(--accent); }
+        .method-card h4 { font-size: 20px; color: var(--primary-dark); margin-bottom: 10px; }
+        .method-card p { color: var(--text-medium); line-height: 1.7; }
+
+        /* CTA */
+        .cta-section { background: var(--bg-light); padding: 80px 40px; text-align: center; }
+        .cta-section h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 20px; }
+        .cta-section p { font-size: 18px; color: var(--text-medium); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Footer */
+        footer { background: var(--text-dark); color: white; padding: 60px 40px 30px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+        .footer-column h4 { font-size: 18px; margin-bottom: 20px; color: var(--accent-light); font-family: 'Playfair Display', serif; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 15px; transition: color 0.3s; }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6); }
+        .footer-locations { max-width: 1200px; margin: 0 auto 30px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); }
+        @media (max-width: 968px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image { height: 300px; }
+            .values-grid { grid-template-columns: 1fr; }
+            .approach-methods { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+            nav { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+            header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <span>Thérapie Virtuelle à Casablanca et Partout au Maroc</span>
+        <div class="top-bar-buttons">
+            <a href="contact.html" class="btn-small">Commencer</a>
+            <a href="#" class="btn-small">Espace Client</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Hamid Jaouhar</a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="about.html" class="active">À Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn-primary">COMMENCER</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>À Propos</h1>
+        <p>Découvrez mon parcours, mes valeurs et l'approche qui guide mon accompagnement thérapeutique.</p>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-grid">
+                <div class="about-image">👨‍💼</div>
+                <div class="about-text">
+                    <h2>Hamid Jaouhar</h2>
+                    <p>Je suis Hamid Jaouhar, thérapeute certifié basé à Casablanca, au Maroc. Depuis plusieurs années, j'accompagne des adultes qui traversent des périodes de transition, d'anxiété ou de remise en question profonde.</p>
+                    <p>Mon parcours professionnel m'a amené à constater que beaucoup de personnes souffrent en silence, incapables de trouver un espace sûr pour explorer leurs émotions et leurs défis. C'est cette conviction qui m'a poussé à me spécialiser dans l'accompagnement des transitions de vie et de l'anxiété.</p>
+                    <p>Je crois fermement que chaque personne possède en elle les ressources nécessaires pour traverser les épreuves et se reconstruire. Mon rôle est de vous aider à accéder à ces ressources, dans un environnement bienveillant et sans jugement.</p>
+                    <p><strong>Spécialisations :</strong> Transitions de vie, anxiété, perfectionnisme, relations interpersonnelles, développement personnel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="values-content">
+            <h2>Mes Valeurs</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Authenticité</h3>
+                    <p>Je me présente comme une vraie personne, pas comme un thérapeute distant. La relation thérapeutique est au cœur du processus de guérison.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Bienveillance</h3>
+                    <p>Un espace sûr où vous pouvez être vulnérable, explorer vos émotions et grandir à votre rythme, sans jugement.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌟</div>
+                    <h3>Excellence</h3>
+                    <p>Un engagement continu envers le développement professionnel et l'utilisation des méthodes thérapeutiques les plus efficaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="approach-section">
+        <div class="approach-content">
+            <h2>Mon Approche Thérapeutique</h2>
+            <p>Je combine plusieurs approches pour créer un accompagnement sur mesure qui correspond vraiment à vos besoins uniques.</p>
+            <div class="approach-methods">
+                <div class="method-card">
+                    <h4>🧠 Thérapie Cognitivo-Comportementale (TCC)</h4>
+                    <p>Identifier et transformer les schémas de pensée négatifs qui alimentent l'anxiété et le mal-être. Des outils concrets pour votre quotidien.</p>
+                </div>
+                <div class="method-card">
+                    <h4>🔍 Approche Psychodynamique</h4>
+                    <p>Explorer les origines profondes de vos schémas actuels pour comprendre et transformer durablement votre façon d'être dans le monde.</p>
+                </div>
+                <div class="method-card">
+                    <h4>🧘 Pleine Conscience</h4>
+                    <p>Développer la présence attentive et l'acceptation pour apaiser le mental et cultiver une paix intérieure durable.</p>
+                </div>
+                <div class="method-card">
+                    <h4>🎯 Approche Orientée Solutions</h4>
+                    <p>Construire des objectifs clairs et mesurables pour chaque séance, avec un focus sur le progrès concret dans votre vie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Envie de Faire Connaissance ?</h2>
+        <p>Réservez votre consultation gratuite de 15 minutes et voyons si nous sommes compatibles.</p>
+        <a href="contact.html" class="btn-primary">Réserver Ma Consultation Gratuite</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Hamid Jaouhar</h4>
+                <a href="index.html">Site Principal</a>
+                <a href="about.html">À Propos d'Hamid</a>
+                <a href="contact.html">Réserver en Ligne</a>
+            </div>
+            <div class="footer-column">
+                <h4>Notre Équipe</h4>
+                <a href="about.html">Rencontrer Notre Équipe</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <a href="contact.html">Réserver en Ligne</a>
+                <a href="contact.html">Formulaire de Contact</a>
+                <a href="#">Espace Client</a>
+            </div>
+            <div class="footer-column">
+                <h4>Liens Rapides</h4>
+                <a href="services.html">Services de Thérapie</a>
+                <a href="about.html">À Propos</a>
+                <a href="about.html">Rencontrer Notre Équipe</a>
+            </div>
+        </div>
+        <div class="footer-locations">
+            Thérapie Virtuelle à Casablanca et Partout au Maroc | Services de thérapie en ligne pour Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Mohammedia, El Jadida, Nador, Béni Mellal, et toutes les villes du Maroc.
+        </div>
+        <div class="footer-bottom">
+            © 2026 Hamid Jaouhar. Tous Droits Réservés.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            if (nav.style.display === 'flex') {
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px';
+                nav.style.left = '0';
+                nav.style.right = '0';
+                nav.style.background = 'white';
+                nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            }
+        }
+    </script>
+</body>
+</html>
