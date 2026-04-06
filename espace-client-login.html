@@ -163,11 +163,11 @@
             document.getElementById('loadingOverlay').style.display = 'none';
         }
 
-        // Parse CSV: columns are Nom, Code, Email
+        // Parse CSV: columns are Nom, Code, Email (or just data without headers)
         function parseCSV(csvText) {
             const lines = csvText.trim().split('\n');
-            // Skip header row, read from row 2 onwards
-            for (let i = 1; i < lines.length; i++) {
+            // Read ALL rows - don't skip header in case there isn't one
+            for (let i = 0; i < lines.length; i++) {
                 const line = lines[i].trim();
                 if (!line) continue;
                 // Parse CSV line (handle commas in quotes)

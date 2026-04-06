@@ -33,7 +33,8 @@
       "Bash(pattern, *)",
       "Bash(pdfs *)",
       "Bash(dict.fromkeys)",
-      "Read(//Users/hamidjaouhar/Downloads/**)"
+      "Read(//Users/hamidjaouhar/Downloads/**)",
+      "WebFetch(docs.google.com)"
     ]
   },
   "$version": 3
