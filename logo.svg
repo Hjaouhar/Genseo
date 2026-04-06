@@ -6,8 +6,7 @@
     </linearGradient>
   </defs>
   <!-- HJ Icon -->
-  <rect x="8" y="8" width="104" height="104" rx="20" fill="url(#hjGrad)"/>
-  <text x="60" y="72" font-family="Georgia, 'Playfair Display', serif" font-size="56" font-weight="700" fill="#C9A87C" text-anchor="middle">HJ</text>
+  <text x="60" y="60" font-family="Georgia, 'Playfair Display', serif" font-size="64" font-weight="700" fill="#C9A87C" text-anchor="middle" dominant-baseline="middle">HJ</text>
   <!-- Name -->
   <text x="130" y="50" font-family="Georgia, 'Playfair Display', serif" font-size="42" font-weight="700" fill="#3D5655">Hamid Jaouhar</text>
   <text x="130" y="75" font-family="'Inter', Helvetica, sans-serif" font-size="14" font-weight="400" fill="#5B7B7A" letter-spacing="2">THÉRAPIE CERTIFIÉE · COACHING DE VIE</text>

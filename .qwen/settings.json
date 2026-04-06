@@ -34,7 +34,8 @@
       "Bash(pdfs *)",
       "Bash(dict.fromkeys)",
       "Read(//Users/hamidjaouhar/Downloads/**)",
-      "WebFetch(docs.google.com)"
+      "WebFetch(docs.google.com)",
+      "Bash(dig *)"
     ]
   },
   "$version": 3
