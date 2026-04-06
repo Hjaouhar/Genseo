@@ -45,7 +45,8 @@
         .about-section { padding: 80px 40px; }
         .about-content { max-width: 1000px; margin: 0 auto; }
         .about-grid { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; margin-bottom: 80px; }
-        .about-image { background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius: 15px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-image { border-radius: 15px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
         .about-text h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 20px; }
         .about-text p { font-size: 17px; color: var(--text-medium); margin-bottom: 20px; line-height: 1.8; }
 
@@ -130,7 +131,9 @@
     <section class="about-section">
         <div class="about-content">
             <div class="about-grid">
-                <div class="about-image">👨‍💼</div>
+                <div class="about-image">
+                    <img src="photos/about-hamid.jpeg" alt="Hamid Jaouhar - Thérapeute Certifié">
+                </div>
                 <div class="about-text">
                     <h2>Hamid Jaouhar</h2>
                     <p>Je suis Hamid Jaouhar, thérapeute certifié basé à Casablanca, au Maroc. Depuis plusieurs années, j'accompagne des adultes qui traversent des périodes de transition, d'anxiété ou de remise en question profonde.</p>
