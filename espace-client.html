@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Espace Client Hamid Jaouhar — Ressources, exercices, liens de paiement et séances Zoom pour vos thérapies virtuelles.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Espace Client | Hamid Jaouhar — Thérapie Virtuelle Zoom</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #5B7B7A; --primary-light: #7A9E9D; --primary-dark: #3D5655;
+            --accent: #C9A87C; --accent-light: #E0CBA8;
+            --text-dark: #2C3E50; --text-medium: #5A6B7A; --text-light: #8A9BA8;
+            --bg-cream: #FAF8F5; --bg-light: #F5F2ED; --bg-white: #FFFFFF; --border-light: #E8E4DF;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--bg-cream); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        a { text-decoration: none; }
+        .top-bar { background: var(--primary-dark); color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .top-bar-buttons { display: flex; gap: 10px; }
+        .btn-small { background: transparent; border: 1px solid white; color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all 0.3s; }
+        .btn-small:hover { background: white; color: var(--primary-dark); }
+        header { background: var(--bg-white); padding: 20px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 56px; width: auto; }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--primary); }
+        .btn-primary { background: var(--primary); color: white; padding: 12px 28px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(91,123,122,0.3); }
+        .btn-secondary { background: transparent; color: var(--primary); padding: 12px 28px; border: 2px solid var(--primary); border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
+        .btn-secondary:hover { background: var(--primary); color: white; }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 80px 40px; text-align: center; }
+        .page-header h1 { font-size: 42px; margin-bottom: 15px; }
+        .page-header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .lock-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px; font-size: 13px; margin-top: 20px; }
+
+        /* Navigation Tabs */
+        .client-nav { background: white; padding: 0 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 76px; z-index: 999; }
+        .client-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0; overflow-x: auto; }
+        .client-nav a { padding: 18px 24px; color: var(--text-medium); font-weight: 500; font-size: 14px; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.3s; }
+        .client-nav a:hover, .client-nav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+        /* Sections */
+        .client-section { padding: 80px 40px; }
+        .client-section:nth-child(even) { background: var(--bg-light); }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-inner h2 { font-size: 32px; color: var(--primary-dark); margin-bottom: 10px; }
+        .section-inner > p { color: var(--text-medium); margin-bottom: 40px; font-size: 16px; }
+
+        /* Cards Grid */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .resource-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; border-left: 4px solid var(--accent); }
+        .resource-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .resource-card h4 { font-size: 18px; color: var(--primary-dark); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .resource-card p { color: var(--text-medium); font-size: 14px; line-height: 1.7; margin-bottom: 15px; }
+        .resource-card .btn-download { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; font-size: 14px; padding: 8px 16px; background: var(--bg-cream); border-radius: 20px; transition: all 0.3s; }
+        .resource-card .btn-download:hover { background: var(--primary); color: white; }
+        .coming-soon { background: var(--bg-light); opacity: 0.7; }
+        .coming-soon-tag { background: var(--accent); color: white; font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600; }
+
+        /* Payment Card */
+        .payment-card { background: white; padding: 50px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; max-width: 600px; margin: 0 auto; border: 2px solid var(--accent); }
+        .payment-card h3 { font-size: 28px; color: var(--primary-dark); margin-bottom: 10px; }
+        .payment-amount { font-size: 56px; font-weight: 700; color: var(--primary); margin: 20px 0 10px; }
+        .payment-desc { color: var(--text-medium); font-size: 16px; margin-bottom: 25px; }
+        .payment-info { background: var(--bg-cream); padding: 20px; border-radius: 10px; text-align: left; margin-bottom: 25px; }
+        .payment-info p { color: var(--text-medium); font-size: 14px; line-height: 1.7; margin-bottom: 10px; }
+        .payment-info p:last-child { margin-bottom: 0; }
+
+        /* Info Cards */
+        .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .info-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); }
+        .info-card h4 { font-size: 18px; color: var(--primary-dark); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-card p, .info-card li { color: var(--text-medium); font-size: 14px; line-height: 1.7; }
+        .info-card ul { list-style: none; }
+        .info-card ul li { padding: 6px 0; padding-left: 20px; position: relative; }
+        .info-card ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+        /* Assessment Form */
+        .assessment-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); max-width: 700px; margin: 0 auto; }
+        .assessment-card h3 { font-size: 22px; color: var(--primary-dark); margin-bottom: 10px; }
+        .assessment-card > p { color: var(--text-medium); margin-bottom: 30px; }
+        .assessment-question { margin-bottom: 25px; }
+        .assessment-question p { font-weight: 600; color: var(--text-dark); margin-bottom: 10px; }
+        .assessment-options { display: flex; gap: 10px; flex-wrap: wrap; }
+        .assessment-option { flex: 1; min-width: 100px; }
+        .assessment-option label { display: block; padding: 12px 10px; text-align: center; background: var(--bg-cream); border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--text-medium); transition: all 0.3s; border: 2px solid transparent; }
+        .assessment-option input { display: none; }
+        .assessment-option input:checked + label { background: var(--primary); color: white; border-color: var(--primary-dark); }
+        .btn-assess { background: var(--primary); color: white; padding: 14px 32px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; width: 100%; margin-top: 20px; }
+        .btn-assess:hover { background: var(--primary-dark); }
+        .result-box { display: none; margin-top: 20px; padding: 20px; background: var(--bg-cream); border-radius: 10px; border-left: 4px solid var(--accent); }
+        .result-box p { color: var(--text-medium); font-size: 14px; line-height: 1.7; }
+
+        /* Zoom Link Card */
+        .zoom-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 50px; border-radius: 15px; text-align: center; max-width: 600px; margin: 0 auto; }
+        .zoom-card h3 { font-size: 28px; margin-bottom: 15px; }
+        .zoom-card p { opacity: 0.9; margin-bottom: 25px; }
+        .btn-zoom { background: #2D8CFF; color: white; padding: 16px 40px; border: none; border-radius: 30px; font-size: 17px; font-weight: 700; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+        .btn-zoom:hover { background: #1A73E8; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(45,140,255,0.3); }
+
+        /* Footer */
+        footer { background: var(--text-dark); color: white; padding: 60px 40px 30px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+        .footer-column h4 { font-size: 18px; margin-bottom: 20px; color: var(--accent-light); font-family: 'Playfair Display', serif; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 15px; transition: color 0.3s; }
+        .footer-column a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); }
+        @media (max-width: 968px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+            nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .client-nav { padding: 0 20px; }
+        }
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 28px; }
+            header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <span>Espace Client — Thérapie Virtuelle par Zoom</span>
+        <div class="top-bar-buttons">
+            <a href="index.html" class="btn-small">← Retour au site</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="logo.svg" alt="Hamid Jaouhar - Espace Client">
+            </a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">À Propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="espace-client.html" class="btn-primary">ESPACE CLIENT</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Espace Client</h1>
+        <p>Vos ressources, exercices, lien de paiement et accès Zoom — tout en un seul endroit pour accompagner votre thérapie.</p>
+        <div class="lock-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Espace réservé aux clients — Identification bientôt disponible
+        </div>
+    </section>
+
+    <nav class="client-nav">
+        <div class="client-nav-inner">
+            <a href="#zoom" class="active">Séance Zoom</a>
+            <a href="#paiement">Paiement</a>
+            <a href="#ressources">Ressources</a>
+            <a href="#exercices">Exercices</a>
+            <a href="#evaluation">Auto-évaluation</a>
+            <a href="#infos">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <!-- Zoom Access -->
+    <section id="zoom" class="client-section">
+        <div class="section-inner">
+            <h2>Accéder à Votre Séance Zoom</h2>
+            <p>Cliquez sur le bouton ci-dessous pour rejoindre votre séance de thérapie virtuelle à l'heure convenue.</p>
+            <div class="zoom-card">
+                <h3>Rejoindre Ma Séance</h3>
+                <p>Ce lien vous mène directement à la salle d'attente virtuelle de votre thérapeute. Assurez-vous d'être dans un endroit calme et confidentiel.</p>
+                <a href="https://zoom.us/join" target="_blank" class="btn-zoom">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h10a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm12 2l6-2v12l-6-2V6z"/></svg>
+                    Rejoindre la Séance Zoom
+                </a>
+                <p style="font-size: 13px; opacity: 0.7; margin-top: 20px;">Vous recevrez votre lien personnel par email avant chaque séance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment -->
+    <section id="paiement" class="client-section">
+        <div class="section-inner">
+            <h2 style="text-align: center;">Paiement de Votre Séance</h2>
+            <p style="text-align: center;">Toutes les séances sont payées à l'avance. Le paiement confirme votre rendez-vous.</p>
+            <div class="payment-card">
+                <h3>Séance Individuelle — 50 min</h3>
+                <div class="payment-amount">500 DHS</div>
+                <p class="payment-desc">Thérapie virtuelle par Zoom — Tarif unique</p>
+                <div class="payment-info">
+                    <p><strong>Comment payer :</strong> Après votre consultation gratuite, vous recevrez un lien de paiement sécurisé par email ou WhatsApp. Cliquez dessus pour régler par carte bancaire.</p>
+                    <p><strong>Cartes acceptées :</strong> Visa, Mastercard, cartes bancaires marocaines.</p>
+                    <p><strong>Politique d'annulation :</strong> Toute séance annulée moins de 24h à l'avance sera facturée. Merci de prévenir par email ou WhatsApp dès que possible.</p>
+                    <p><strong>Besoin d'un tarif adapté ?</strong> Contactez-moi directement à h.jaouhar@gmail.com pour discuter de votre situation.</p>
+                </div>
+                <a href="mailto:h.jaouhar@gmail.com?subject=Demande de Lien de Paiement — Thérapie Virtuelle" class="btn-primary" style="font-size: 16px; padding: 14px 32px;">Demander Mon Lien de Paiement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="ressources" class="client-section">
+        <div class="section-inner">
+            <h2>Ressources Thérapeutiques</h2>
+            <p>Documents et guides pour accompagner votre parcours thérapeutique entre les séances.</p>
+            <div class="cards-grid">
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Guide : Comprendre l'Anxiété
+                    </h4>
+                    <p>Un guide complet pour comprendre les mécanismes de l'anxiété, ses symptômes et les stratégies pour la gérer au quotidien.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Préparer Sa Première Séance
+                    </h4>
+                    <p>Tout ce que vous devez savoir avant votre première séance de thérapie virtuelle. Conseils pratiques pour optimiser votre expérience.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Guide du Perfectionnisme
+                    </h4>
+                    <p>Comment identifier le perfectionnisme toxique et commencer à développer une relation plus saine avec vous-même.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Confidentialité & Déontologie
+                    </h4>
+                    <p>Vos droits en tant que patient, les garanties de confidentialité de vos séances Zoom et le code de déontologie de votre thérapeute.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises -->
+    <section id="exercices" class="client-section">
+        <div class="section-inner">
+            <h2>Exercices & Outils Pratiques</h2>
+            <p>Exercices à pratiquer entre les séances pour renforcer les bénéfices de votre thérapie au quotidien.</p>
+            <div class="cards-grid">
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7B7A" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        Exercice de Respiration 4-7-8
+                    </h4>
+                    <p>Une technique de respiration simple et efficace pour calmer l'anxiété instantanément. Pratiquez 3 fois par jour pour des résultats optimaux.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7B7A" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        Journal de Gratitude
+                    </h4>
+                    <p>Un template de journal pour noter 3 choses positives chaque jour. Simple mais puissant pour transformer votre état d'esprit.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7B7A" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        Scan Corporel (Body Scan)
+                    </h4>
+                    <p>Un guide audio de 15 minutes pour pratiquer le scan corporel — une technique de pleine conscience pour se reconnecter à son corps.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+                <div class="resource-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7B7A" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                        Tableau des Pensées (TCC)
+                    </h4>
+                    <p>Un outil cognitivo-comportemental pour identifier, remettre en question et transformer les pensées automatiques négatives.</p>
+                    <span class="coming-soon-tag">Bientôt disponible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self Assessment -->
+    <section id="evaluation" class="client-section">
+        <div class="section-inner">
+            <h2 style="text-align: center;">Auto-Évaluation Rapide</h2>
+            <p style="text-align: center;">Évaluez votre état actuel en répondant à ces 5 questions. Ce n'est pas un diagnostic, mais un outil de réflexion.</p>
+            <div class="assessment-card">
+                <h3>Comment vous sentez-vous en ce moment ?</h3>
+                <p>Pour chaque affirmation, choisissez le niveau qui correspond le mieux à votre ressenti ces 7 derniers jours.</p>
+
+                <div class="assessment-question">
+                    <p>1. Je me sens anxieux(e) ou inquiet(e) la plupart du temps</p>
+                    <div class="assessment-options">
+                        <div class="assessment-option"><input type="radio" name="q1" id="q1a" value="0"><label for="q1a">Jamais</label></div>
+                        <div class="assessment-option"><input type="radio" name="q1" id="q1b" value="1"><label for="q1b">Parfois</label></div>
+                        <div class="assessment-option"><input type="radio" name="q1" id="q1c" value="2"><label for="q1c">Souvent</label></div>
+                        <div class="assessment-option"><input type="radio" name="q1" id="q1d" value="3"><label for="q1d">Toujours</label></div>
+                    </div>
+                </div>
+
+                <div class="assessment-question">
+                    <p>2. J'ai du mal à dormir ou mon sommeil est perturbé</p>
+                    <div class="assessment-options">
+                        <div class="assessment-option"><input type="radio" name="q2" id="q2a" value="0"><label for="q2a">Jamais</label></div>
+                        <div class="assessment-option"><input type="radio" name="q2" id="q2b" value="1"><label for="q2b">Parfois</label></div>
+                        <div class="assessment-option"><input type="radio" name="q2" id="q2c" value="2"><label for="q2c">Souvent</label></div>
+                        <div class="assessment-option"><input type="radio" name="q2" id="q2d" value="3"><label for="q2d">Toujours</label></div>
+                    </div>
+                </div>
+
+                <div class="assessment-question">
+                    <p>3. Je me sens dépassé(e) par les événements de ma vie</p>
+                    <div class="assessment-options">
+                        <div class="assessment-option"><input type="radio" name="q3" id="q3a" value="0"><label for="q3a">Jamais</label></div>
+                        <div class="assessment-option"><input type="radio" name="q3" id="q3b" value="1"><label for="q3b">Parfois</label></div>
+                        <div class="assessment-option"><input type="radio" name="q3" id="q3c" value="2"><label for="q3c">Souvent</label></div>
+                        <div class="assessment-option"><input type="radio" name="q3" id="q3d" value="3"><label for="q3d">Toujours</label></div>
+                    </div>
+                </div>
+
+                <div class="assessment-question">
+                    <p>4. Je me sens isolé(e) ou seul(e) dans mes difficultés</p>
+                    <div class="assessment-options">
+                        <div class="assessment-option"><input type="radio" name="q4" id="q4a" value="0"><label for="q4a">Jamais</label></div>
+                        <div class="assessment-option"><input type="radio" name="q4" id="q4b" value="1"><label for="q4b">Parfois</label></div>
+                        <div class="assessment-option"><input type="radio" name="q4" id="q4c" value="2"><label for="q4c">Souvent</label></div>
+                        <div class="assessment-option"><input type="radio" name="q4" id="q4d" value="3"><label for="q4d">Toujours</label></div>
+                    </div>
+                </div>
+
+                <div class="assessment-question">
+                    <p>5. J'ai du mal à trouver du plaisir dans les activités quotidiennes</p>
+                    <div class="assessment-options">
+                        <div class="assessment-option"><input type="radio" name="q5" id="q5a" value="0"><label for="q5a">Jamais</label></div>
+                        <div class="assessment-option"><input type="radio" name="q5" id="q5b" value="1"><label for="q5b">Parfois</label></div>
+                        <div class="assessment-option"><input type="radio" name="q5" id="q5c" value="2"><label for="q5c">Souvent</label></div>
+                        <div class="assessment-option"><input type="radio" name="q5" id="q5d" value="3"><label for="q5d">Toujours</label></div>
+                    </div>
+                </div>
+
+                <button class="btn-assess" onclick="calculateResult()">Voir Mon Résultat</button>
+
+                <div class="result-box" id="resultBox">
+                    <h4 id="resultTitle" style="color: var(--primary-dark); margin-bottom: 10px;"></h4>
+                    <p id="resultText"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Info -->
+    <section id="infos" class="client-section">
+        <div class="section-inner">
+            <h2>Informations Pratiques</h2>
+            <p>Tout ce que vous devez savoir pour préparer et optimiser vos séances de thérapie virtuelle.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Comment Se Préparer à Une Séance
+                    </h4>
+                    <ul>
+                        <li>Choisissez un endroit calme et privé</li>
+                        <li>Coupez les notifications de votre appareil</li>
+                        <li>Connectez-vous 2-3 minutes avant l'heure</li>
+                        <li>Préparez un verre d'eau à portée de main</li>
+                        <li>Notez vos questions ou sujets à aborder</li>
+                        <li>Portez des vêtements confortables</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Confidentialité & Sécurité
+                    </h4>
+                    <ul>
+                        <li>Séances cryptées de bout en bout via Zoom</li>
+                        <li>Aucun enregistrement des séances</li>
+                        <li>Vos données sont protégées et confidentielles</li>
+                        <li>Respect du code de déontologie du thérapeute</li>
+                        <li>Secret professionnel garanti</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Politique d'Annulation
+                    </h4>
+                    <ul>
+                        <li>Annulation gratuite 24h avant la séance</li>
+                        <li>Moins de 24h : la séance est facturée</li>
+                        <li>Prévenez par email ou WhatsApp dès que possible</li>
+                        <li>Les retards de +15 min = séance écourtée</li>
+                        <li>Les retards répétés peuvent entraîner une réorganisation</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A87C" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact & Support
+                    </h4>
+                    <ul>
+                        <li>Email : h.jaouhar@gmail.com</li>
+                        <li>WhatsApp : +212 600 601 878</li>
+                        <li>Réponse sous 24h maximum</li>
+                        <li>Urgences : contactez le 15 (SAMU) ou 141</li>
+                        <li>Pour les MRE : créneaux adaptés aux fuseaux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Hamid Jaouhar</h4>
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À Propos</a>
+                <a href="services.html">Services</a>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="services.html">Thérapie Anxiété</a>
+                <a href="services.html">Transitions de Vie</a>
+                <a href="services.html">Perfectionnisme</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <a href="contact.html">Réserver en Ligne</a>
+                <a href="mailto:h.jaouhar@gmail.com">h.jaouhar@gmail.com</a>
+                <a href="contact.html">WhatsApp : +212 600 601 878</a>
+            </div>
+            <div class="footer-column">
+                <h4>Espace Client</h4>
+                <a href="espace-client.html#zoom">Accéder à Zoom</a>
+                <a href="espace-client.html#paiement">Paiement</a>
+                <a href="espace-client.html#ressources">Ressources</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Hamid Jaouhar. Tous Droits Réservés.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            if (nav.style.display === 'flex') {
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px'; nav.style.left = '0'; nav.style.right = '0';
+                nav.style.background = 'white'; nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            }
+        }
+
+        // Smooth scroll for nav tabs
+        document.querySelectorAll('.client-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                document.querySelectorAll('.client-nav a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Active tab on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            document.querySelectorAll('.client-nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+
+        // Self Assessment
+        function calculateResult() {
+            let total = 0;
+            let answered = 0;
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) { total += parseInt(selected.value); answered++; }
+            }
+            if (answered < 5) { alert('Merci de répondre à toutes les questions.'); return; }
+
+            const box = document.getElementById('resultBox');
+            const title = document.getElementById('resultTitle');
+            const text = document.getElementById('resultText');
+            box.style.display = 'block';
+
+            if (total <= 3) {
+                title.textContent = '✅ État général stable';
+                text.textContent = 'Vos réponses indiquent un niveau de bien-être relativement bon. Continuez à prendre soin de vous ! Si certaines situations vous pèsent, n\'hésitez pas à en parler lors de votre prochaine séance.';
+            } else if (total <= 7) {
+                title.textContent = '⚠️ Attention — Signes modérés';
+                text.textContent = 'Vos réponses suggèrent un niveau de stress ou d\'anxiété modéré. C\'est le bon moment pour entamer un accompagnement thérapeutique. Une séance de thérapie peut vous aider à ne pas laisser la situation s\'aggraver.';
+            } else {
+                title.textContent = '🔴 Alerte — Soutien recommandé';
+                text.textContent = 'Vos réponses indiquent un niveau de détresse significatif. Il est fortement recommandé de consulter un professionnel rapidement. Contactez Hamid Jaouhar dès que possible pour réserver une séance : h.jaouhar@gmail.com ou WhatsApp +212 600 601 878. En cas d\'urgence, appelez le 15 (SAMU) ou le 141.';
+            }
+        }
+    </script>
+</body>
+</html>
