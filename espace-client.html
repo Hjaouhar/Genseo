@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Protect this page - redirect to login if not authenticated
+        (function() {
+            var auth = sessionStorage.getItem('hj_client_auth');
+            var authTime = parseInt(sessionStorage.getItem('hj_client_time') || '0');
+            if (auth !== 'true' || (Date.now() - authTime > 2 * 60 * 60 * 1000)) {
+                window.location.href = 'espace-client-login.html';
+            }
+        })();
+    </script>
     <meta name="description" content="Espace Client Hamid Jaouhar — Ressources, exercices, liens de paiement et séances Zoom pour vos thérapies virtuelles.">
     <meta name="robots" content="noindex, nofollow">
     <title>Espace Client | Hamid Jaouhar — Thérapie Virtuelle Zoom</title>
@@ -149,7 +159,7 @@
                 <a href="services.html">Services</a>
                 <a href="about.html">À Propos</a>
                 <a href="contact.html">Contact</a>
-                <a href="espace-client.html" class="btn-primary">ESPACE CLIENT</a>
+                <a href="espace-client-login.html" class="btn-primary">ESPACE CLIENT</a>
             </nav>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         </div>
