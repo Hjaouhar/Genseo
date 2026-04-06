@@ -66,7 +66,7 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
         /* Success Message */
-        .success-message { display: none; background: #E8F5E9; border: 1px solid #4CAF50; color: #2E7D32; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
+        .success-message { display: none; }
 
         /* FAQ */
         .faq-section { padding: 80px 40px; background: var(--bg-light); }
@@ -179,15 +179,22 @@
 
             <div class="contact-form">
                 <h3>Réserver une Consultation Gratuite</h3>
-                <form id="contactForm">
+                <form action="https://formsubmit.co/h.jaouhar@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="Nouvelle Consultation Gratuite - Site Web">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://hjaouhar.github.io/Genseo/contact.html">
+                    <input type="text" name="_honey" style="display:none">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">Prénom *</label>
-                            <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
+                            <input type="text" id="firstName" name="Prénom" required placeholder="Votre prénom">
                         </div>
                         <div class="form-group">
                             <label for="lastName">Nom *</label>
-                            <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
+                            <input type="text" id="lastName" name="Nom" required placeholder="Votre nom">
                         </div>
                     </div>
                     <div class="form-row">
@@ -197,12 +204,12 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+212 600 601 878">
+                            <input type="tel" id="phone" name="Téléphone" placeholder="+212 600 601 878">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="service">Service Souhaité</label>
-                        <select id="service" name="service">
+                        <select id="service" name="Service">
                             <option value="">-- Choisissez un service --</option>
                             <option value="anxiete">Thérapie de l'Anxiété</option>
                             <option value="transitions">Transitions de Vie</option>
@@ -215,13 +222,10 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Parlez-moi brièvement de ce qui vous amène..."></textarea>
+                        <textarea id="message" name="Message" placeholder="Parlez-moi brièvement de ce qui vous amène..."></textarea>
                     </div>
                     <button type="submit" class="btn-primary" style="width: 100%;">Envoyer Ma Demande</button>
                 </form>
-                <div class="success-message" id="successMessage">
-                    ✅ Merci ! Votre demande a été envoyée avec succès. Je vous répondrai sous 24 heures.
-                </div>
             </div>
         </div>
     </section>
@@ -311,11 +315,6 @@
             }
         }
         function toggleFaq(item) { item.classList.toggle('active'); }
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            this.style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-        });
     </script>
 </body>
 </html>
