@@ -32,7 +32,8 @@
       "Bash(matches *)",
       "Bash(pattern, *)",
       "Bash(pdfs *)",
-      "Bash(dict.fromkeys)"
+      "Bash(dict.fromkeys)",
+      "Read(//Users/hamidjaouhar/Downloads/**)"
     ]
   },
   "$version": 3
