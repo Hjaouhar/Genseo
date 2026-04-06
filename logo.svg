@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120">
   <defs>
     <linearGradient id="hjGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#5B7B7A"/>
@@ -9,8 +9,8 @@
   <rect x="8" y="8" width="104" height="104" rx="20" fill="url(#hjGrad)"/>
   <text x="60" y="72" font-family="Georgia, 'Playfair Display', serif" font-size="56" font-weight="700" fill="#C9A87C" text-anchor="middle">HJ</text>
   <!-- Name -->
-  <text x="130" y="50" font-family="Georgia, 'Playfair Display', serif" font-size="32" font-weight="700" fill="#3D5655">Hamid Jaouhar</text>
+  <text x="130" y="50" font-family="Georgia, 'Playfair Display', serif" font-size="42" font-weight="700" fill="#3D5655">Hamid Jaouhar</text>
   <text x="130" y="75" font-family="'Inter', Helvetica, sans-serif" font-size="14" font-weight="400" fill="#5B7B7A" letter-spacing="2">THÉRAPIE CERTIFIÉE · COACHING DE VIE</text>
-  <line x1="130" y1="90" x2="280" y2="90" stroke="#C9A87C" stroke-width="1.5"/>
-  <text x="130" y="108" font-family="'Inter', Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8A9BA8" letter-spacing="1.5">CASABLANCA, MAROC</text>
+  <line x1="130" y1="90" x2="395" y2="90" stroke="#C9A87C" stroke-width="1.5"/>
+  <text x="130" y="108" font-family="'Inter', Helvetica, sans-serif" font-size="15" font-weight="700" fill="#8A9BA8" letter-spacing="1.5">CASABLANCA, MAROC</text>
 </svg>
