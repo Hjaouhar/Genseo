@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Accès Espace Client — Hamid Jaouhar</title>
+    <title>Acces Espace Client — Hamid Jaouhar</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
         .login-card > p { color: var(--text-medium); font-size: 14px; margin-bottom: 35px; line-height: 1.6; }
         .pin-display { margin-bottom: 30px; }
         .pin-dots { display: flex; justify-content: center; gap: 15px; margin-bottom: 10px; }
-        .pin-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border-light, #E8E4DF); background: transparent; transition: all 0.2s; }
+        .pin-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #E8E4DF; background: transparent; transition: all 0.2s; }
         .pin-dot.filled { background: var(--primary); border-color: var(--primary); }
         .pin-dot.error { background: #E74C3C; border-color: #E74C3C; animation: shake 0.5s; }
         .pin-dot.success { background: #27AE60; border-color: #27AE60; }
@@ -46,7 +46,10 @@
         .back-link:hover { color: var(--primary-dark); }
         .help-text { font-size: 12px; color: var(--text-light); margin-top: 20px; line-height: 1.6; }
         .help-text a { color: var(--primary); }
-
+        .loading-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 20px; z-index: 10; }
+        .loading-spinner { width: 40px; height: 40px; border: 4px solid var(--bg-light); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 15px; }
+        .loading-text { font-size: 14px; color: var(--text-medium); }
+        @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-8px); }
@@ -60,7 +63,13 @@
 </head>
 <body>
     <div class="login-container">
-        <div class="login-card">
+        <div class="login-card" style="position: relative;">
+            <!-- Loading overlay -->
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Chargement de l'espace client...</p>
+            </div>
+
             <div class="lock-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
@@ -68,7 +77,7 @@
                 </svg>
             </div>
             <h1>Espace Client</h1>
-            <p>Entrez votre code d'accès à 4 chiffres pour accéder à votre espace thérapeutique personnalisé.</p>
+            <p>Entrez votre code d'accès à 4 chiffres pour accéder à votre espace therapeutique personnalise.</p>
 
             <div class="pin-display">
                 <div class="pin-dots">
@@ -116,22 +125,61 @@
 
     <script>
         // =============================================
-        // PIN CODE SYSTEM - Espace Client Protection
+        // PIN CODE SYSTEM - Google Sheets Integration
         // =============================================
 
-        // To generate valid PIN hashes, open browser console and run:
-        // btoa('YOUR_PIN') — e.g., btoa('1234') => 'MTIzNA=='
-        // Add new authorized PINs below:
-        const VALID_PIN_HASHES = [
-            btoa('1234'),  // Example PIN: 1234 (CHANGE THIS!)
-            btoa('5678'),  // Example PIN: 5678 (CHANGE THIS!)
-        ];
+        // Google Sheet published CSV URL
+        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1d_ivdaqOiHC-rkDjsfJ3w-Lxqsm5Zouu8f2F_0zOLbc/export?format=csv';
 
-        const MAX_ATTEMPTS = 5;
-        const LOCKOUT_MINUTES = 15;
+        let validPins = new Set();
         let currentPin = '';
         let attempts = 0;
         let lockedUntil = null;
+        let isLoading = true;
+
+        const MAX_ATTEMPTS = 5;
+        const LOCKOUT_MINUTES = 15;
+
+        // Fetch PIN codes from Google Sheet
+        async function fetchValidPins() {
+            try {
+                const response = await fetch(SHEET_CSV_URL);
+                if (!response.ok) throw new Error('Failed to fetch');
+                const csvText = await response.text();
+                parseCSV(csvText);
+                console.log('Loaded ' + validPins.size + ' valid PIN codes');
+            } catch (error) {
+                console.error('Error fetching PINs:', error);
+                document.getElementById('loadingOverlay').innerHTML =
+                    '<div style="text-align:center;padding:40px;">' +
+                    '<p style="color:#E74C3C;font-size:16px;margin-bottom:15px;">Erreur de chargement</p>' +
+                    '<p style="color:#5A6B7A;font-size:14px;">Impossible de charger les codes d\'accès.</p>' +
+                    '<p style="color:#5A6B7A;font-size:14px;margin-top:10px;">Veuillez recharger la page.</p>' +
+                    '<button onclick="location.reload()" style="margin-top:20px;padding:12px 24px;background:#5B7B7A;color:white;border:none;border-radius:20px;cursor:pointer;">Recharger</button>' +
+                    '</div>';
+                return;
+            }
+            isLoading = false;
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+
+        // Parse CSV: columns are Nom, Code, Email
+        function parseCSV(csvText) {
+            const lines = csvText.trim().split('\n');
+            // Skip header row, read from row 2 onwards
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
+                // Parse CSV line (handle commas in quotes)
+                const cols = line.split(',').map(c => c.trim().replace(/^"|"$/g, ''));
+                if (cols.length >= 2) {
+                    const code = cols[1]; // Code is column B (index 1)
+                    if (code && /^\d{4}$/.test(code)) {
+                        validPins.add(code);
+                    }
+                }
+            }
+        }
 
         // Check if locked out
         function checkLockout() {
@@ -159,7 +207,7 @@
         }
 
         function addDigit(d) {
-            if (checkLockout()) return;
+            if (isLoading || checkLockout()) return;
             if (currentPin.length >= 4) return;
             currentPin += d;
             updateDots();
@@ -169,7 +217,7 @@
         }
 
         function deleteDigit() {
-            if (checkLockout()) return;
+            if (isLoading || checkLockout()) return;
             if (currentPin.length === 0) return;
             currentPin = currentPin.slice(0, -1);
             updateDots();
@@ -185,10 +233,9 @@
         }
 
         function submitPin() {
-            if (currentPin.length !== 4) return;
+            if (currentPin.length !== 4 || isLoading) return;
 
-            const pinHash = btoa(currentPin);
-            const isValid = VALID_PIN_HASHES.includes(pinHash);
+            const isValid = validPins.has(currentPin);
 
             if (isValid) {
                 // Success - store session and redirect
@@ -228,7 +275,7 @@
 
         // Keyboard support
         document.addEventListener('keydown', function(e) {
-            if (checkLockout()) return;
+            if (isLoading || checkLockout()) return;
             if (e.key >= '0' && e.key <= '9') addDigit(e.key);
             else if (e.key === 'Backspace') deleteDigit();
             else if (e.key === 'Enter' && currentPin.length === 4) submitPin();
@@ -243,8 +290,8 @@
             }
         }
 
-        // Init
-        checkLockout();
+        // Init - fetch PINs on load
+        fetchValidPins();
     </script>
 </body>
 </html>
