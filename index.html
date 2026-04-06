@@ -242,15 +242,20 @@
 
         .therapist-image {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            height: 350px;
             border-radius: 10px;
             margin-bottom: 20px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 72px;
+        }
+
+        .therapist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .therapist-card h3 {
@@ -732,7 +737,9 @@
                 </div>
             </div>
             <div class="therapist-card">
-                <div class="therapist-image">🧘</div>
+                <div class="therapist-image">
+                    <img src="photos/téléchargement.jpeg" alt="Hamid Jaouhar - Thérapeute Certifié">
+                </div>
                 <h3>Hamid Jaouhar | Thérapeute Certifié · Coach de Vie</h3>
                 <div class="therapist-badges">
                     <div class="therapist-badge">Nouveaux Clients Acceptés</div>
@@ -779,7 +786,9 @@
     <section class="meet-therapist">
         <div class="therapist-section">
             <div class="therapist-card">
-                <div class="therapist-image">👨‍💼</div>
+                <div class="therapist-image">
+                    <img src="photos/téléchargement.jpeg" alt="Hamid Jaouhar - Thérapeute">
+                </div>
             </div>
             <div>
                 <h2>Rencontrez Votre Thérapeute</h2>
