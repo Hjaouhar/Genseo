@@ -17,7 +17,16 @@
       "Bash(font-family=\"'playfair display', georgia, serif\" *)",
       "Bash(eof)",
       "Bash(python3 *)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(pip3 install *)",
+      "Bash(with)",
+      "Bash(as *)",
+      "Bash(content *)",
+      "Bash(old_section *)",
+      "Bash(guide *)",
+      "Bash(print)",
+      "Bash(else:)",
+      "Bash(pyeof)"
     ]
   },
   "$version": 3
