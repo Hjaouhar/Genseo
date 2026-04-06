@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Meilleur thérapeute certifié au Maroc. Thérapie virtuelle par Zoom pour anxiété, transitions de vie, perfectionnisme. Consultation pas chère depuis Casablanca, Rabat, Marrakech et tout le Maroc.">
-    <meta name="keywords" content="meilleur thérapeute Maroc, psy en ligne pas cher, thérapie Zoom Maroc, psychologue Casablanca, thérapeute certifié, coaching vie Maroc, psy en ligne Rabat, consultation virtuelle Marrakech">
+    <meta name="keywords" content="meilleur thérapeute Maroc, psy en ligne pas cher, thérapie Zoom Maroc, thérapeute Casablanca, thérapeute certifié, coaching vie Maroc, psy en ligne Rabat, consultation virtuelle Marrakech">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Hamid Jaouhar">
     <link rel="canonical" href="https://hjaouhar.github.io/Genseo/">
@@ -117,6 +117,21 @@
         .focus-icon { margin-bottom: 20px; display: flex; justify-content: center; }
         .focus-card h4 { font-size: 20px; color: var(--primary-dark); margin-bottom: 15px; }
         .focus-card p { color: var(--text-medium); line-height: 1.7; }
+        /* Pricing */
+        .pricing-section { padding: 80px 40px; background: white; }
+        .pricing-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .pricing-content h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 15px; }
+        .pricing-content h3 { font-size: 20px; color: var(--accent); margin-bottom: 40px; font-weight: 600; }
+        .pricing-card { background: var(--bg-cream); border-radius: 15px; padding: 50px 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: left; border: 2px solid var(--accent); }
+        .pricing-header h4 { font-size: 22px; color: var(--primary-dark); margin-bottom: 15px; }
+        .price { font-size: 56px; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
+        .price-note { font-size: 14px; color: var(--text-light); margin-bottom: 30px; }
+        .pricing-features { list-style: none; margin-bottom: 30px; }
+        .pricing-features li { padding: 10px 0; color: var(--text-medium); padding-left: 25px; position: relative; font-size: 15px; }
+        .pricing-features li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .pricing-info { background: white; padding: 25px; border-radius: 10px; }
+        .pricing-info p { color: var(--text-medium); line-height: 1.7; font-size: 15px; margin-bottom: 12px; }
+        .pricing-info p:last-child { margin-bottom: 0; }
         /* Getting Started */
         .getting-started { padding: 80px 40px; background: var(--bg-light); }
         .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
@@ -159,6 +174,8 @@
         @media (max-width: 968px) {
             .hero-content, .therapist-section { grid-template-columns: 1fr; }
             .pain-points, .focus-grid, .steps { grid-template-columns: 1fr; }
+            .pricing-card { padding: 30px 20px; }
+            .price { font-size: 42px; }
             .footer-content { grid-template-columns: repeat(2, 1fr); }
             .hero-text h1 { font-size: 32px; }
             .section-content h2 { font-size: 28px; }
@@ -210,7 +227,7 @@
                 </div>
                 <p class="hero-tagline">THÉRAPIE VIRTUELLE PAR ZOOM — ADULTES &amp; PROFESSIONNELS</p>
                 <h1>Meilleur Thérapeute au Maroc | Thérapie en Ligne par Zoom</h1>
-                <p>Anxiété, perfectionnisme, transitions de vie — vous n'avez pas à affronter cela seul. Hamid Jaouhar, thérapeute certifié à Casablanca, propose des séances de thérapie virtuelle pas chère via Zoom pour adultes partout au Maroc. Consultez un psychologue en ligne depuis chez vous, sans déplacement.</p>
+                <p>Anxiété, perfectionnisme, transitions de vie — vous n'avez pas à affronter cela seul. Hamid Jaouhar, thérapeute certifié à Casablanca, propose des séances de thérapie virtuelle pas chère via Zoom pour adultes partout au Maroc. Consultez un thérapeute en ligne depuis chez vous, sans déplacement.</p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn-primary">Réserver une Consultation Gratuite de 15 min</a>
                     <a href="about.html" class="btn-secondary">Découvrir Hamid Jaouhar →</a>
@@ -254,7 +271,7 @@
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4l3 7h7l-5.5 4.5 2 7L16 18l-6.5 4.5 2-7L6 11h7l3-7z" stroke="#C9A87C" stroke-width="2" fill="none"/></svg>
                     </div>
                     <h4>Le perfectionnisme dirige votre vie :</h4>
-                    <p>Vous vous fixez des standards impossibles et vous avez toujours l'impression de ne pas être à la hauteur. Un psychologue en ligne peut vous aider à transformer ce schéma destructeur.</p>
+                    <p>Vous vous fixez des standards impossibles et vous avez toujours l'impression de ne pas être à la hauteur. Un thérapeute en ligne peut vous aider à transformer ce schéma destructeur.</p>
                 </div>
                 <div class="pain-point">
                     <div class="pain-point-icon">
@@ -280,7 +297,7 @@
         <div class="therapist-section">
             <div class="therapist-card">
                 <div class="therapist-image">
-                    <img src="photos/about-hamid.jpeg" alt="Hamid Jaouhar - Meilleur Psychologue Casablanca - Thérapie Zoom">
+                    <img src="photos/about-hamid.jpeg" alt="Hamid Jaouhar - Meilleur Thérapeute Casablanca - Thérapie Zoom">
                 </div>
             </div>
             <div>
@@ -312,7 +329,7 @@
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#5B7B7A" stroke-width="2"/><circle cx="24" cy="24" r="10" stroke="#C9A87C" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="#5B7B7A"/></svg>
                     </div>
                     <h4>Anxiété et Inquiétude</h4>
-                    <p>Consultez un psychologue en ligne pour l'anxiété depuis Casablanca, Rabat ou Marrakech. Apprenez à apaiser les pensées envahissantes et retrouvez le calme au quotidien grâce à la TCC par Zoom.</p>
+                    <p>Consultez un thérapeute en ligne pour l'anxiété depuis Casablanca, Rabat ou Marrakech. Apprenez à apaiser les pensées envahissantes et retrouvez le calme au quotidien grâce à la TCC par Zoom.</p>
                 </div>
                 <div class="focus-card">
                     <div class="focus-icon">
@@ -347,7 +364,33 @@
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="12" y="8" width="24" height="30" rx="3" stroke="#5B7B7A" stroke-width="2"/><path d="M12 18h24" stroke="#C9A87C" stroke-width="2"/><path d="M18 26h12M18 32h8" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M20 8V5a4 4 0 018 0v3" stroke="#C9A87C" stroke-width="2"/></svg>
                     </div>
                     <h4>Stress Universitaire et Post-Études</h4>
-                    <p>Étudiants et jeunes diplômés à Casablanca, Rabat ou Fès — la pression de l'entrée dans la vie adulte est réelle. Votre psychologue en ligne pas cher vous aide à trouver votre chemin.</p>
+                    <p>Étudiants et jeunes diplômés à Casablanca, Rabat ou Fès — la pression de l'entrée dans la vie adulte est réelle. Votre thérapeute en ligne pas cher vous aide à trouver votre chemin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-content">
+            <h2>Tarifs de Thérapie Virtuelle</h2>
+            <h3>UN INVESTISSEMENT ACCESSIBLE POUR VOTRE BIEN-ÊTRE</h3>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h4>Séance Individuelle — 50 minutes</h4>
+                    <div class="price">500 DHS</div>
+                    <p class="price-note">Thérapie virtuelle par Zoom — Tarif unique</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>Séance individuelle personnalisée de 50 minutes</li>
+                    <li>Approche intégrative adaptée à vos besoins</li>
+                    <li>Lien Zoom sécurisé et confidentiel</li>
+                    <li>Suivi entre les séances par email</li>
+                    <li>Tarifs réduits disponibles selon votre situation — contactez-moi</li>
+                </ul>
+                <div class="pricing-info">
+                    <p><strong>Paiement à l'avance :</strong> Toutes les séances sont payées à l'avance. Après notre consultation gratuite, si nous décidons de travailler ensemble, vous recevrez un lien de paiement par email ou WhatsApp. Le lien est sécurisé et accepte les cartes bancaires marocaines et internationales.</p>
+                    <p><strong>Pour réserver votre séance :</strong> Contactez-moi via le formulaire ci-dessous, par email à h.jaouhar@gmail.com ou par WhatsApp au +212 600 601 878. Je vous enverrai le lien de paiement pour confirmer votre rendez-vous.</p>
                 </div>
             </div>
         </div>
@@ -367,12 +410,12 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h4>Faisons Connaissance par Zoom</h4>
-                    <p>Lors de cet appel de 15 minutes, nous échangeons sur votre situation. Vous évaluez si mon approche vous correspond. Je vous explique comment fonctionne la thérapie virtuelle par Zoom.</p>
+                    <p>Lors de cet appel de 15 minutes, nous échangeons sur votre situation. Vous évaluez si mon approche vous correspond. Je vous explique comment fonctionne la thérapie virtuelle par Zoom et vous envoie le lien de paiement pour confirmer votre première séance.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h4>Commencez Votre Parcours Thérapeutique</h4>
-                    <p>Si nous sommes compatibles, nous planifions votre première séance de 50 minutes. Recevez votre lien Zoom personnel et commencez à vous sentir mieux — depuis chez vous.</p>
+                    <h4>Payez et Commencez Votre Parcours</h4>
+                    <p>Après la consultation gratuite, si nous sommes compatibles, vous recevez un lien de paiement sécurisé (500 DHS/séance de 50 min). Une fois le paiement confirmé, nous planifions votre première séance. Recevez votre lien Zoom personnel et commencez à vous sentir mieux.</p>
                 </div>
             </div>
         </div>
@@ -382,21 +425,21 @@
     <section class="cities-section">
         <div class="cities-content">
             <h2>Thérapie Virtuelle par Zoom — Partout au Maroc</h2>
-            <p>En tant que thérapeute certifié basé à Casablanca, j'accompagne des adultes dans tout le Maroc grâce à la consultation en ligne par Zoom. Que vous cherchiez le <strong>meilleur psychologue</strong> dans votre ville ou une <strong>thérapie pas chère</strong>, la distance n'est plus un obstacle. Voici les principales villes où mes patients consultent régulièrement :</p>
+            <p>En tant que thérapeute certifié basé à Casablanca, j'accompagne des adultes dans tout le Maroc grâce à la consultation en ligne par Zoom. Que vous cherchiez le <strong>meilleur thérapeute</strong> dans votre ville ou une <strong>thérapie pas chère</strong>, la distance n'est plus un obstacle. Voici les principales villes où mes patients consultent régulièrement :</p>
             <div class="cities-grid">
                 <div class="city-card">
-                    <h4>Psychologue en Ligne Casablanca</h4>
+                    <h4>Thérapeute en Ligne Casablanca</h4>
                     <p>Meilleur thérapeute certifié à Casablanca. Thérapie Zoom pour anxiété, burn-out et transitions de vie. Tarifs adaptés disponibles.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
                     <h4>Thérapie Virtuelle Rabat</h4>
-                    <p>Psychologue pas cher à Rabat. Consultation en ligne pour professionnels et fonctionnaires. TCC et approche psychodynamique.</p>
+                    <p>Thérapeute pas cher à Rabat. Consultation en ligne pour professionnels et fonctionnaires. TCC et approche psychodynamique.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
-                    <h4>Psychologue en Ligne Marrakech</h4>
-                    <p>Meilleur psychologue à Marrakech en ligne. Thérapie par Zoom pour anxiété, perfectionnisme et coaching de vie.</p>
+                    <h4>Thérapeute en Ligne Marrakech</h4>
+                    <p>Meilleur thérapeute à Marrakech en ligne. Thérapie par Zoom pour anxiété, perfectionnisme et coaching de vie.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
@@ -406,11 +449,11 @@
                 </div>
                 <div class="city-card">
                     <h4>Thérapie en Ligne Tanger</h4>
-                    <p>Psychologue en ligne pour Tanger et le nord du Maroc. Consultation virtuelle pas chère par Zoom ou téléphone.</p>
+                    <p>Thérapeute en ligne pour Tanger et le nord du Maroc. Consultation virtuelle pas chère par Zoom ou téléphone.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
-                    <h4>Psychologue Agadir</h4>
+                    <h4>Thérapeute Agadir</h4>
                     <p>Thérapie virtuelle pour Agadir et le Souss. Accompagnement personnalisé pour anxiété, stress et développement personnel.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
@@ -420,22 +463,22 @@
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
-                    <h4>Psychologue en Ligne Oujda</h4>
+                    <h4>Thérapeute en Ligne Oujda</h4>
                     <p>Meilleur thérapeute pour Oujda et l'oriental. Thérapie virtuelle accessible et abordable par Zoom.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
                     <h4>Consultation Virtuelle Kénitra</h4>
-                    <p>Thérapie en ligne pour Kénitra. Psychologue certifié pour anxiété, relations et limites personnelles.</p>
+                    <p>Thérapie en ligne pour Kénitra. Thérapeute certifié pour anxiété, relations et limites personnelles.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
                     <h4>Thérapie Zoom Tétouan</h4>
-                    <p>Psychologue en ligne pour Tétouan et le Rif. Séances confidentielles par Zoom pour adultes et jeunes diplômés.</p>
+                    <p>Thérapeute en ligne pour Tétouan et le Rif. Séances confidentielles par Zoom pour adultes et jeunes diplômés.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
                 <div class="city-card">
-                    <h4>Psychologue Safi</h4>
+                    <h4>Thérapeute Safi</h4>
                     <p>Consultation thérapeutique en ligne pour Safi et Doukkala-Abda. Tarifs adaptés et approche intégrative.</p>
                     <a href="contact.html">Réserver →</a>
                 </div>
@@ -484,9 +527,9 @@
             </div>
             <div class="footer-column">
                 <h4>Villes Desservies</h4>
-                <a href="contact.html">Psychologue Casablanca</a>
+                <a href="contact.html">Thérapeute Casablanca</a>
                 <a href="contact.html">Thérapie Rabat</a>
-                <a href="contact.html">Psychologue Marrakech</a>
+                <a href="contact.html">Thérapeute Marrakech</a>
                 <a href="contact.html">Thérapie Fès</a>
             </div>
             <div class="footer-column">
@@ -498,7 +541,7 @@
             </div>
         </div>
         <div class="footer-locations">
-            Thérapie Virtuelle par Zoom à Casablanca et Partout au Maroc | Psychologue en ligne pour Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Mohammedia, El Jadida, Nador, Béni Mellal, Dakhla, Laâyoune et toutes les villes du Maroc | Thérapeute certifié pas cher — Consultation gratuite de 15 minutes
+            Thérapie Virtuelle par Zoom à Casablanca et Partout au Maroc | Thérapeute en ligne pour Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Mohammedia, El Jadida, Nador, Béni Mellal, Dakhla, Laâyoune et toutes les villes du Maroc | Thérapeute certifié pas cher — Consultation gratuite de 15 minutes
         </div>
         <div class="footer-bottom">
             © 2026 Hamid Jaouhar. Tous Droits Réservés. | Meilleur Thérapeute en Ligne au Maroc
