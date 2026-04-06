@@ -26,7 +26,13 @@
       "Bash(guide *)",
       "Bash(print)",
       "Bash(else:)",
-      "Bash(pyeof)"
+      "Bash(pyeof)",
+      "Bash(import *)",
+      "Bash(pattern *)",
+      "Bash(matches *)",
+      "Bash(pattern, *)",
+      "Bash(pdfs *)",
+      "Bash(dict.fromkeys)"
     ]
   },
   "$version": 3
