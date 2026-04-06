@@ -16,7 +16,8 @@
       "Bash(cat)",
       "Bash(font-family=\"'playfair display', georgia, serif\" *)",
       "Bash(eof)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "WebSearch"
     ]
   },
   "$version": 3

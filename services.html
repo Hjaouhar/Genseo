@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Services de thérapie à Casablanca - Anxiété, Transitions de Vie, Perfectionnisme. Hamid Jaouhar, thérapeute certifié.">
-    <title>Nos Services | Hamid Jaouhar - Thérapie à Casablanca</title>
+    <meta name="description" content="Services de thérapie virtuelle par Zoom au Maroc. Thérapeute certifié pour anxiété, transitions de vie, perfectionnisme à Casablanca, Rabat, Marrakech. Tarifs adaptés.">
+    <meta name="keywords" content="thérapie anxiété Casablanca, psychologue transitions Rabat, psy perfectionnisme Marrakech, thérapie Zoom Fès, psychologue relations Tanger, coaching vie Agadir">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hjaouhar.github.io/Genseo/services.html">
+    <title>Services de Thérapie Virtuelle au Maroc | Anxiété, Transitions, Perfectionnisme</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #5B7B7A;
-            --primary-light: #7A9E9D;
-            --primary-dark: #3D5655;
-            --accent: #C9A87C;
-            --accent-light: #E0CBA8;
-            --text-dark: #2C3E50;
-            --text-medium: #5A6B7A;
-            --text-light: #8A9BA8;
-            --bg-cream: #FAF8F5;
-            --bg-light: #F5F2ED;
-            --bg-white: #FFFFFF;
-            --border-light: #E8E4DF;
+            --primary: #5B7B7A; --primary-light: #7A9E9D; --primary-dark: #3D5655;
+            --accent: #C9A87C; --accent-light: #E0CBA8;
+            --text-dark: #2C3E50; --text-medium: #5A6B7A; --text-light: #8A9BA8;
+            --bg-cream: #FAF8F5; --bg-light: #F5F2ED; --bg-white: #FFFFFF; --border-light: #E8E4DF;
         }
-        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--bg-cream); }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
         a { text-decoration: none; }
         .top-bar { background: var(--primary-dark); color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
@@ -35,60 +29,39 @@
         .btn-small:hover { background: white; color: var(--primary-dark); }
         header { background: var(--bg-white); padding: 20px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+        .logo { display: flex; align-items: center; }
         .logo img { height: 56px; width: auto; }
         nav { display: flex; align-items: center; gap: 30px; }
         nav a { color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
         nav a:hover, nav a.active { color: var(--primary); }
-        .btn-primary { background: var(--primary); color: white; padding: 12px 28px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: var(--primary); color: white; padding: 12px 28px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
         .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(91,123,122,0.3); }
-        .btn-secondary { background: transparent; color: var(--primary); padding: 12px 28px; border: 2px solid var(--primary); border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-block; }
-        .btn-secondary:hover { background: var(--primary); color: white; }
-
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 80px 40px;
-            text-align: center;
-        }
-        .page-header h1 { font-size: 48px; margin-bottom: 15px; }
-        .page-header p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-
-        /* Services Section */
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 80px 40px; text-align: center; }
+        .page-header h1 { font-size: 42px; margin-bottom: 15px; }
+        .page-header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
         .services-section { padding: 80px 40px; }
-        .services-content { max-width: 1200px; margin: 0 auto; }
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 50px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 40px;
-            align-items: start;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .service-icon { font-size: 64px; }
-        .service-card h3 { font-size: 28px; color: var(--primary-dark); margin-bottom: 15px; }
-        .service-card p { color: var(--text-medium); line-height: 1.8; margin-bottom: 20px; }
-        .service-card ul { list-style: none; margin-bottom: 25px; }
-        .service-card ul li { padding: 8px 0; padding-left: 25px; position: relative; color: var(--text-medium); }
-        .service-card ul li::before { content: "✓"; color: var(--accent); font-weight: bold; position: absolute; left: 0; }
-        .service-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-        .service-tag { background: var(--bg-light); padding: 6px 14px; border-radius: 15px; font-size: 12px; color: var(--primary); }
-
-        /* CTA */
-        .cta-section { background: var(--bg-light); padding: 80px 40px; text-align: center; }
-        .cta-section h2 { font-size: 36px; color: var(--primary-dark); margin-bottom: 20px; }
-        .cta-section p { font-size: 18px; color: var(--text-medium); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-        /* Footer */
+        .services-content { max-width: 1000px; margin: 0 auto; }
+        .service-card { background: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; gap: 30px; align-items: flex-start; }
+        .service-card:nth-child(even) { flex-direction: row-reverse; }
+        .service-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .service-card h3 { font-size: 24px; color: var(--primary-dark); margin-bottom: 15px; }
+        .service-card p { color: var(--text-medium); line-height: 1.8; margin-bottom: 15px; }
+        .service-card ul { list-style: none; margin-bottom: 20px; }
+        .service-card ul li { padding: 6px 0; color: var(--text-medium); padding-left: 20px; position: relative; }
+        .service-card ul li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .service-tag { background: var(--bg-light); padding: 5px 14px; border-radius: 15px; font-size: 12px; color: var(--primary); font-weight: 500; }
+        .seo-section { padding: 80px 40px; background: var(--bg-light); }
+        .seo-content { max-width: 1000px; margin: 0 auto; }
+        .seo-content h2 { font-size: 32px; color: var(--primary-dark); margin-bottom: 20px; text-align: center; }
+        .seo-content > p { text-align: center; color: var(--text-medium); margin-bottom: 40px; font-size: 17px; line-height: 1.8; }
+        .seo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .seo-card { background: white; padding: 25px; border-radius: 12px; border-left: 4px solid var(--accent); }
+        .seo-card h4 { font-size: 18px; color: var(--primary-dark); margin-bottom: 10px; }
+        .seo-card p { color: var(--text-medium); line-height: 1.7; font-size: 15px; }
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 80px 40px; text-align: center; }
+        .cta-section h2 { font-size: 32px; margin-bottom: 15px; }
+        .cta-section p { font-size: 17px; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
         footer { background: var(--text-dark); color: white; padding: 60px 40px 30px; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
         .footer-column h4 { font-size: 18px; margin-bottom: 20px; color: var(--accent-light); font-family: 'Playfair Display', serif; }
@@ -98,185 +71,210 @@
         .footer-locations { max-width: 1200px; margin: 0 auto 30px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); }
         @media (max-width: 968px) {
-            .service-card { grid-template-columns: 1fr; text-align: center; }
+            .service-card, .service-card:nth-child(even) { flex-direction: column; }
+            .seo-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: repeat(2, 1fr); }
             nav { display: none; }
             .mobile-menu-btn { display: block; }
         }
         @media (max-width: 600px) {
             .footer-content { grid-template-columns: 1fr; }
-            .page-header h1 { font-size: 32px; }
-            .service-card { padding: 30px; }
+            .page-header h1 { font-size: 28px; }
             header { padding: 15px 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
     <div class="top-bar">
-        <span>Thérapie Virtuelle à Casablanca et Partout au Maroc</span>
+        <span>Thérapie Virtuelle par Zoom — Casablanca et Tout le Maroc</span>
         <div class="top-bar-buttons">
-            <a href="contact.html" class="btn-small">Commencer</a>
-            <a href="#" class="btn-small">Espace Client</a>
+            <a href="contact.html" class="btn-small">Consultation Gratuite</a>
+            <a href="contact.html" class="btn-small">Espace Client</a>
         </div>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="logo.svg" alt="Hamid Jaouhar - Thérapie">
+                <img src="logo.svg" alt="Hamid Jaouhar - Services de Thérapie Virtuelle Zoom Maroc">
             </a>
             <nav>
                 <a href="index.html">Accueil</a>
                 <a href="services.html" class="active">Services</a>
                 <a href="about.html">À Propos</a>
                 <a href="contact.html">Contact</a>
-                <a href="contact.html" class="btn-primary">COMMENCER</a>
+                <a href="contact.html" class="btn-primary">CONSULTER</a>
             </nav>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         </div>
     </header>
 
-    <!-- Page Header -->
     <section class="page-header">
-        <h1>Nos Services</h1>
-        <p>Un accompagnement professionnel et bienveillant pour traverser les moments de changement et retrouver votre équilibre.</p>
+        <h1>Services de Thérapie Virtuelle au Maroc</h1>
+        <p>Thérapie en ligne par Zoom pour anxiété, transitions de vie, perfectionnisme. Votre psychologue certifié accessible depuis Casablanca, Rabat, Marrakech et tout le Maroc.</p>
     </section>
 
-    <!-- Services -->
     <section class="services-section">
         <div class="services-content">
-            <!-- Service 1 -->
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#5B7B7A" stroke-width="2"/><circle cx="24" cy="24" r="10" stroke="#C9A87C" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="#5B7B7A"/></svg>
+                    <svg width="56" height="56" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#5B7B7A" stroke-width="2"/><circle cx="24" cy="24" r="10" stroke="#C9A87C" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="#5B7B7A"/></svg>
                 </div>
                 <div>
-                    <h3>Thérapie de l'Anxiété</h3>
-                    <p>Apprenez à gérer l'anxiété qui envahit votre quotidien. Nous travaillons ensemble à identifier les schémas de pensée anxieux et à développer des outils concrets pour retrouver calme et sérénité.</p>
+                    <h3>Thérapie de l'Anxiété en Ligne — Casablanca</h3>
+                    <p>Consultez un psychologue spécialisé en anxiété depuis Casablanca, Rabat ou Marrakech. La thérapie cognitivo-comportementale (TCC) par Zoom vous aide à identifier et transformer les schémas de pensée anxieux qui envahissent votre quotidien.</p>
                     <ul>
                         <li>Attaques de panique et inquiétudes constantes</li>
                         <li>Rumination mentale et pensées envahissantes</li>
                         <li>Anxiété sociale et professionnelle</li>
-                        <li>Techniques de gestion du stress</li>
+                        <li>Techniques de gestion du stress adaptées à votre vie au Maroc</li>
                     </ul>
                     <div class="service-tags">
                         <span class="service-tag">TCC</span>
                         <span class="service-tag">Pleine Conscience</span>
-                        <span class="service-tag">Virtuelle</span>
+                        <span class="service-tag">Zoom</span>
+                        <span class="service-tag">Anxiété Casablanca</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 2 -->
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M12 38l8-16 6 6 14-22" stroke="#5B7B7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="6" r="4" stroke="#C9A87C" stroke-width="2"/></svg>
+                    <svg width="56" height="56" viewBox="0 0 48 48" fill="none"><path d="M12 38l8-16 6 6 14-22" stroke="#5B7B7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="6" r="4" stroke="#C9A87C" stroke-width="2"/></svg>
                 </div>
                 <div>
-                    <h3>Transitions de Vie</h3>
-                    <p>Les grands changements de vie peuvent être déstabilisants. Que vous traversiez un divorce, une reconversion professionnelle, un déménagement ou une remise en question existentielle, je vous accompagne pour trouver votre nouveau cap.</p>
+                    <h3>Transitions de Vie — Thérapie Virtuelle Rabat</h3>
+                    <p>Les grands changements déstabilisent. Que vous traversiez un divorce, une reconversion professionnelle, un déménagement ou une remise en question existentielle, votre thérapeute certifié à Casablanca vous accompagne pour trouver votre nouveau cap — partout au Maroc via Zoom.</p>
                     <ul>
-                        <li>Changement de carrière ou reconversion</li>
+                        <li>Changement de carrière ou reconversion professionnelle</li>
                         <li>Séparation, divorce ou fin de relation</li>
-                        <li>Déménagement ou expatriation</li>
+                        <li>Déménagement ou expatriation depuis le Maroc</li>
                         <li>Deuil et perte d'un être cher</li>
                         <li>Crise existentielle ou questionnement identitaire</li>
                     </ul>
                     <div class="service-tags">
                         <span class="service-tag">Coaching de Vie</span>
-                        <span class="service-tag">Approche Psychodynamique</span>
-                        <span class="service-tag">Casablanca</span>
+                        <span class="service-tag">Psychodynamique</span>
+                        <span class="service-tag">Transitions Rabat</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 3 -->
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 8l4 8h9l-7 5.5 2.5 9L24 35l-8.5 5.5 2.5-9L11 16h9l4-8z" stroke="#C9A87C" stroke-width="2" fill="none"/></svg>
+                    <svg width="56" height="56" viewBox="0 0 48 48" fill="none"><path d="M24 8l4 8h9l-7 5.5 2.5 9L24 35l-8.5 5.5 2.5-9L11 16h9l4-8z" stroke="#C9A87C" stroke-width="2" fill="none"/></svg>
                 </div>
                 <div>
-                    <h3>Perfectionnisme et Confiance en Soi</h3>
-                    <p>Le perfectionnisme peut être un fardeau invisible. Apprenez à vous libérer des standards impossibles que vous vous imposez et développez une relation plus saine avec vous-même.</p>
+                    <h3>Perfectionnisme et Confiance en Soi — Marrakech</h3>
+                    <p>Le perfectionnisme est un fardeau invisible. Votre psychologue en ligne à Marrakech, Casablanca ou ailleurs au Maroc vous aide à vous libérer des standards impossibles et à développer une relation plus saine avec vous-même. Un des meilleurs services de thérapie pas cher au Maroc.</p>
                     <ul>
-                        <li>Syndrome de l'imposteur</li>
-                        <li>Auto-critique excessive</li>
+                        <li>Syndrome de l'imposteur au travail</li>
+                        <li>Auto-critique excessive et culpabilité</li>
                         <li>Peur de l'échec et procrastination</li>
-                        <li>Développement de l'auto-compassion</li>
+                        <li>Développement de la confiance en soi</li>
                     </ul>
                     <div class="service-tags">
+                        <span class="service-tag">Perfectionnisme</span>
                         <span class="service-tag">Confiance en Soi</span>
-                        <span class="service-tag">Estime de Soi</span>
-                        <span class="service-tag">Bienveillance</span>
+                        <span class="service-tag">Marrakech</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 4 -->
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="18" cy="16" r="8" stroke="#5B7B7A" stroke-width="2"/><circle cx="30" cy="16" r="8" stroke="#C9A87C" stroke-width="2"/><path d="M10 38c0-5 3.6-9 8-9s8 4 8 9" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M22 38c0-5 3.6-9 8-9s8 4 8 9" stroke="#C9A87C" stroke-width="2" stroke-linecap="round"/></svg>
+                    <svg width="56" height="56" viewBox="0 0 48 48" fill="none"><circle cx="18" cy="16" r="8" stroke="#5B7B7A" stroke-width="2"/><circle cx="30" cy="16" r="8" stroke="#C9A87C" stroke-width="2"/><path d="M10 38c0-5 3.6-9 8-9s8 4 8 9" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M22 38c0-5 3.6-9 8-9s8 4 8 9" stroke="#C9A87C" stroke-width="2" stroke-linecap="round"/></svg>
                 </div>
                 <div>
-                    <h3>Relations et Limites Personnelles</h3>
-                    <p>Si vous avez tendance à toujours faire plaisir aux autres au détriment de vos propres besoins, nous pouvons travailler ensemble à établir des limites saines et à construire des relations équilibrées.</p>
+                    <h3>Relations et Limites Personnelles — Fès</h3>
+                    <p>Si vous avez tendance à toujours faire plaisir aux autres au détriment de vos propres besoins, votre thérapeute en ligne à Fès vous aide à établir des limites saines et construire des relations équilibrées. Consultation Zoom accessible et abordable.</p>
                     <ul>
-                        <li>Difficulté à dire non</li>
-                        <li>Relations toxiques ou déséquilibrées</li>
-                        <li>Communication assertive</li>
-                        <li>Construction de limites saines</li>
+                        <li>Difficulté à dire non et à s'affirmer</li>
+                        <li>Relations toxiques et dépendance affective</li>
+                        <li>Patterns répétitifs de relations dysfonctionnelles</li>
+                        <li>Construction de limites personnelles saines</li>
                     </ul>
                     <div class="service-tags">
-                        <span class="service-tag">Communication</span>
-                        <span class="service-tag">Limites</span>
-                        <span class="service-tag">Relations Saines</span>
+                        <span class="service-tag">Relations</span>
+                        <span class="service-tag">Limites Personnelles</span>
+                        <span class="service-tag">Fès</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 5 -->
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 40V24" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M24 24c0-6 4-12 10-12-3 0-6-2-6-6 5 0 10 5 10 12 0 4-2 6-4 6" stroke="#C9A87C" stroke-width="2" stroke-linecap="round"/><path d="M24 24c0-6-4-12-10-12 3 0 6-2 6-6-5 0-10 5-10 12 0 4 2 6 4 6" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><ellipse cx="24" cy="40" rx="8" ry="3" stroke="#C9A87C" stroke-width="1.5"/></svg>
+                    <svg width="56" height="56" viewBox="0 0 48 48" fill="none"><path d="M24 40V24" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M24 24c0-6 4-12 10-12-3 0-6-2-6-6 5 0 10 5 10 12 0 4-2 6-4 6" stroke="#C9A87C" stroke-width="2" stroke-linecap="round"/><path d="M24 24c0-6-4-12-10-12 3 0 6-2 6-6-5 0-10 5-10 12 0 4 2 6 4 6" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><ellipse cx="24" cy="40" rx="8" ry="3" stroke="#C9A87C" stroke-width="1.5"/></svg>
                 </div>
                 <div>
-                    <h3>Enfant Intérieur et Guérison Profonde</h3>
-                    <p>Un travail en profondeur pour comprendre les origines de vos schémas actuels. En explorant vos expériences passées avec douceur et bienveillance, vous pouvez transformer votre façon d'être dans le monde aujourd'hui.</p>
+                    <h4>Enfant Intérieur et Guérison Profonde — Tanger</h4>
+                    <p>Un travail en profondeur pour comprendre les origines de vos schémas actuels. La thérapie psychodynamique en ligne à Tanger explore vos expériences passées avec douceur pour transformer votre façon d'être dans le monde aujourd'hui.</p>
                     <ul>
-                        <li>Traumatismes d'enfance</li>
-                        <li>Schémas d'attachement</li>
-                        <li>Blessures émotionnelles non résolues</li>
+                        <li>Traumatismes d'enfance non résolus</li>
+                        <li>Schémas d'attachement insécure</li>
+                        <li>Blessures émotionnelles profondes</li>
                         <li>Guérison et transformation personnelle</li>
                     </ul>
                     <div class="service-tags">
                         <span class="service-tag">Psychodynamique</span>
                         <span class="service-tag">Attachement</span>
-                        <span class="service-tag">Guérison</span>
+                        <span class="service-tag">Tanger</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 6 -->
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="12" y="8" width="24" height="30" rx="3" stroke="#5B7B7A" stroke-width="2"/><path d="M12 18h24" stroke="#C9A87C" stroke-width="2"/><path d="M18 26h12M18 32h8" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M20 8V5a4 4 0 018 0v3" stroke="#C9A87C" stroke-width="2"/></svg>
+                    <svg width="56" height="56" viewBox="0 0 48 48" fill="none"><rect x="12" y="8" width="24" height="30" rx="3" stroke="#5B7B7A" stroke-width="2"/><path d="M12 18h24" stroke="#C9A87C" stroke-width="2"/><path d="M18 26h12M18 32h8" stroke="#5B7B7A" stroke-width="2" stroke-linecap="round"/><path d="M20 8V5a4 4 0 018 0v3" stroke="#C9A87C" stroke-width="2"/></svg>
                 </div>
                 <div>
-                    <h3>Stress Universitaire et Post-Études</h3>
-                    <p>La pression d'avoir tout compris après les études est réelle. Je vous aide à naviguer cette période de transition stressante et à construire votre chemin à votre rythme.</p>
+                    <h4>Stress Universitaire et Post-Études — Agadir</h4>
+                    <p>Étudiants et jeunes diplôms à Agadir, Meknès ou Oujda — la pression de l'entrée dans la vie active est réelle. Votre psychologue en ligne pas cher vous aide à naviguer cette transition stressante et construire votre chemin.</p>
                     <ul>
                         <li>Stress des examens et surmenage académique</li>
                         <li>Anxiété post-diplôme et entrée dans la vie active</li>
-                        <li>Choix de carrière et orientation</li>
+                        <li>Choix de carrière et orientation professionnelle</li>
                         <li>Équilibre vie professionnelle / vie personnelle</li>
                     </ul>
                     <div class="service-tags">
                         <span class="service-tag">Étudiants</span>
                         <span class="service-tag">Jeunes Diplômés</span>
-                        <span class="service-tag">Orientation</span>
+                        <span class="service-tag">Agadir</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Section - Why Virtual Therapy -->
+    <section class="seo-section">
+        <div class="seo-content">
+            <h2>Pourquoi Choisir la Thérapie Virtuelle par Zoom au Maroc ?</h2>
+            <p>La consultation psychologique en ligne est la solution idéale pour les Marocains qui cherchent un thérapeute de qualité sans les contraintes du déplacement. Voici ce que la thérapie virtuelle vous apporte :</p>
+            <div class="seo-grid">
+                <div class="seo-card">
+                    <h4>Thérapeute Accessible Depuis Tout le Maroc</h4>
+                    <p>Que vous soyez à Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir ou dans une petite ville — il suffit d'une connexion internet. Plus besoin de chercher le meilleur psychologue dans votre ville : votre thérapeute certifié est à un clic.</p>
+                </div>
+                <div class="seo-card">
+                    <h4>Tarifs de Thérapie Pas Cher et Adaptés</h4>
+                    <p>La thérapie en ligne élimine les frais de cabinet et de déplacement. Nous proposons des tarifs adaptés à votre situation au Maroc. Consultez un psychologue de qualité sans vous ruiner — la santé mentale accessible à tous.</p>
+                </div>
+                <div class="seo-card">
+                    <h4>Confidentialité Totale par Zoom</h4>
+                    <p>Zoom utilise un cryptage de bout en bout. Vos séances de thérapie sont entièrement confidentielles. Personne ne sait que vous consultez un psychologue — idéal pour les professionnels et les personnes publiques au Maroc.</p>
+                </div>
+                <div class="seo-card">
+                    <h4>Flexibilité Horaires — Soir et Week-end</h4>
+                    <p>Les séances de thérapie virtuelle s'adaptent à votre emploi du temps. Créneaux en soirée et week-end disponibles. Parfait pour les professionnels occupés à Casablanca, les étudiants à Rabat et les parents débordés.</p>
+                </div>
+                <div class="seo-card">
+                    <h4>Thérapie Efficace et Fondée Scientifiquement</h4>
+                    <p>Des centaines d'études confirment que la thérapie en ligne par Zoom est aussi efficace que les séances en cabinet pour l'anxiété, la dépression, le stress post-traumatique et les troubles de l'humeur. L'OMS reconnaît la téléconsultation comme une alternative valide.</p>
+                </div>
+                <div class="seo-card">
+                    <h4>Idéal pour les Marocains à l'Étranger (MRE)</h4>
+                    <p>Marocains résidant en France, Belgique, Canada, Espagne ou dans les pays du Golfe — consultez un thérapeute marocain francophone qui comprend votre culture. Restez connecté à vos racines tout en bénéficiant d'un accompagnement de qualité.</p>
                 </div>
             </div>
         </div>
@@ -284,8 +282,8 @@
 
     <!-- CTA -->
     <section class="cta-section">
-        <h2>Prêt à Commencer ?</h2>
-        <p>Réservez votre consultation gratuite de 15 minutes et faisons connaissance.</p>
+        <h2>Prêt à Commencer Votre Thérapie en Ligne ?</h2>
+        <p>Réservez votre consultation gratuite de 15 minutes avec Hamid Jaouhar, thérapeute certifié à Casablanca. Voyons si nous sommes compatibles pour travailler ensemble.</p>
         <a href="contact.html" class="btn-primary">Réserver Ma Consultation Gratuite</a>
     </section>
 
@@ -294,31 +292,33 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h4>Hamid Jaouhar</h4>
-                <a href="index.html">Site Principal</a>
-                <a href="about.html">À Propos d'Hamid</a>
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À Propos — Thérapeute Certifié</a>
                 <a href="contact.html">Réserver en Ligne</a>
             </div>
             <div class="footer-column">
-                <h4>Notre Équipe</h4>
-                <a href="about.html">Rencontrer Notre Équipe</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
+                <h4>Services</h4>
+                <a href="services.html">Thérapie Anxiété Casablanca</a>
+                <a href="services.html">Transitions de Vie Rabat</a>
+                <a href="services.html">Perfectionnisme Marrakech</a>
+                <a href="services.html">Coaching de Vie Maroc</a>
+            </div>
+            <div class="footer-column">
+                <h4>Villes</h4>
+                <a href="contact.html">Psychologue Casablanca</a>
+                <a href="contact.html">Thérapie Virtuelle Rabat</a>
+                <a href="contact.html">Psychologue Marrakech</a>
+                <a href="contact.html">Thérapie Fès</a>
             </div>
             <div class="footer-column">
                 <h4>Contact</h4>
-                <a href="contact.html">Réserver en Ligne</a>
                 <a href="contact.html">Formulaire de Contact</a>
-                <a href="#">Espace Client</a>
-            </div>
-            <div class="footer-column">
-                <h4>Liens Rapides</h4>
-                <a href="services.html">Services de Thérapie</a>
-                <a href="about.html">À Propos</a>
-                <a href="about.html">Rencontrer Notre Équipe</a>
+                <a href="mailto:h.jaouhar@gmail.com">h.jaouhar@gmail.com</a>
+                <a href="contact.html">WhatsApp : +212 600 601 878</a>
             </div>
         </div>
         <div class="footer-locations">
-            Thérapie Virtuelle à Casablanca et Partout au Maroc | Services de thérapie en ligne pour Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Mohammedia, El Jadida, Nador, Béni Mellal, et toutes les villes du Maroc.
+            Thérapie Virtuelle par Zoom au Maroc | Psychologue en ligne pour Casablanca, Rabat, Marrakech, Fès, Tanger, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Mohammedia | Thérapeute certifié pas cher
         </div>
         <div class="footer-bottom">
             © 2026 Hamid Jaouhar. Tous Droits Réservés.
@@ -332,11 +332,8 @@
             if (nav.style.display === 'flex') {
                 nav.style.flexDirection = 'column';
                 nav.style.position = 'absolute';
-                nav.style.top = '70px';
-                nav.style.left = '0';
-                nav.style.right = '0';
-                nav.style.background = 'white';
-                nav.style.padding = '20px';
+                nav.style.top = '70px'; nav.style.left = '0'; nav.style.right = '0';
+                nav.style.background = 'white'; nav.style.padding = '20px';
                 nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
             }
         }
